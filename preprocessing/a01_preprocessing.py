@@ -6,6 +6,8 @@ import numpy as np
 import pandas as pd
 
 from functions import detect_outliers as detect_outliers
+from functions import transaction_label as transaction_label
+from functions import process_dataset as process_dataset
 
 sys.path.append(os.getcwd())
 
@@ -40,3 +42,9 @@ df = df.query("unit_price > @lower_unit_price & unit_price < @upper_unit_price")
 
 # Save DataFrame -----------------------------------------------------------------------------------
 df.to_parquet('files/datasets/intermediate/a01_preprocessed.parquet')
+
+# Categorize transactions
+transaction_label.categorize_transaction(df)
+
+# Complete procees 
+process_dataset.process_dataset()
