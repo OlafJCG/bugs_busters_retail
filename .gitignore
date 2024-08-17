@@ -1,5 +1,6 @@
 # Extensiones generales
 
+*.ipynb
 *.RData
 *.RDS
 *.xlsx
@@ -191,6 +192,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+venv_bb
 
 # Spyder project settings
 .spyderproject
@@ -311,6 +313,3 @@ geckodriver.log
 *.code-workspace
 .history
 .vscode
-
-# carpeta de entorno virtual
-venv_bb/
