@@ -3,7 +3,7 @@ import os
 import sys
 
 import params as params
-
+# Append current working directory
 sys.path.append(os.getcwd())
 
 # Defining executable file extensions -----------------------------------------------------------------------------------
