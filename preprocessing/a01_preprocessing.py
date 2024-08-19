@@ -25,22 +25,22 @@ def process_dataset(file_path, output_directory, file_type='csv', **kwargs):
 
     # Paso 1: Limpieza de datos
     df,_ = clear_data(df)
-    intermediate_path = f"{output_directory}df_step1.{file_type}"
-    save_dataset(df, intermediate_path, file_type, index=False)
+    intermediate_path = f"{output_directory}df_step1."
+    save_dataset(df, intermediate_path, file_type='parquet', index=False)
 
     # Paso 2: Eliminar outliers
     df = clean_data(df)
-    intermediate_path = f"{output_directory}df_step2.{file_type}"
-    save_dataset(df, intermediate_path, file_type, index=False)
+    intermediate_path = f"{output_directory}df_step2."
+    save_dataset(df, intermediate_path, file_type='parquet', index=False)
 
     # Paso 3: Categorizar transacciones
     df = categorize_transaction(df)
-    intermediate_path = f"{output_directory}df_step3.{file_type}"
-    save_dataset(df, intermediate_path, file_type, index=False)
+    intermediate_path = f"{output_directory}df_step3."
+    save_dataset(df, intermediate_path, file_type='parquet', index=False)
 
     # Guardar el dataset final
-    final_path = f"{output_directory}df_processed.{file_type}"
-    save_dataset(df, final_path, file_type, index=False)
+    final_path = f"{output_directory}df_processed."
+    save_dataset(df, final_path, file_type='parquet', index=False)
 
 def load_dataset(file_path, file_type='csv', sep=',', encoding='latin1'):
     """
@@ -124,20 +124,22 @@ def clear_data(df, columns=['description', 'customer_id'], critic_columns=['quan
             df[column] = df[column].fillna('unknown')
     return df, null_counts
 
-def save_dataset(df, output_path, file_type='csv', **kwargs):
+def save_dataset(df, output_path, file_type='parquet', **kwargs):
     """
     Guarda un dataset en un archivo.
 
     Parameters:
         df: El DataFrame que se va a guardar.
         output_path (str): La ruta del archivo de salida.
-        file_type (str): El tipo de archivo para guardar ('csv' o 'excel'). El valor por defecto es 'csv'.
+        file_type (str): El tipo de archivo para guardar ('parquet', 'csv' o 'excel'). El valor por defecto es 'parquet' para conservar el tipo de los datos.
     """
     try:
-        if file_type == 'csv':
-            df.to_csv(output_path, **kwargs)
+        if file_type == 'parquet':
+            df.to_parquet(f"{output_path}parquet", **kwargs)
+        elif file_type == 'csv':
+            df.to_csv(f"{output_path}csv", **kwargs)
         elif file_type == 'excel':
-            df.to_excel(output_path, **kwargs)
+            df.to_excel(f"{output_path}excel", **kwargs)
         else:
             print(f"Tipo de archivo {file_type} no soportado.")
         print(f"Dataset guardado en {output_path}.")
