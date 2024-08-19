@@ -19,3 +19,6 @@ print("-----------------------------------------------------------\nPreprocessin
 
 # Preprocessing -----------------------------------------------------------------------------------
 os.system(f"python{binary_extensions} preprocessing/a01_preprocessing.py")
+
+# Model Training and Determining the Optimal Number of Clusters for Dataset Compression -----------------------------------------------------------------------------------
+os.system(f"python{binary_extensions} models/b01_model_creation.py")
