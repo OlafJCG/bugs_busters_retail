@@ -5,9 +5,9 @@ Los datos analizados revelan una clara variabilidad en el comportamiento de comp
 
 Estos hallazgos tienen importantes implicaciones para nuestro negocio. Al comprender las preferencias de nuestros clientes y los factores que influyen en sus decisiones de compra, podemos:
 
-Personalizar nuestras estrategias de marketing: Dirigir ofertas y promociones específicas a segmentos de clientes con necesidades y comportamientos similares.
-Optimizar nuestro inventario: Ajustar los niveles de inventario para satisfacer la demanda de los productos más populares y reducir los costos asociados a productos con baja rotación.
-Mejorar la experiencia del cliente: Identificar y abordar los problemas que generan devoluciones, como la calidad de los productos o la claridad de las descripciones.
+* Personalizar nuestras estrategias de marketing dirigiendo ofertas y promociones específicas a segmentos de clientes con necesidades y comportamientos similares.
+* Optimizar nuestro inventario al ajustar los niveles de inventario para satisfacer la demanda de los productos más populares y reducir los costos asociados a productos con baja rotación.
+* Mejorar la experiencia del clientes identificando  los problemas que generan devoluciones, como la calidad de los productos o la claridad de las descripciones.
 
 
 # Conclusiones
